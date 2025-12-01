@@ -93,3 +93,71 @@ Ensure App Password is correct
 Ensure outgoing port is not blocked
 
 ✔️ Done! Email notifications are now enabled.
+
+
+✅ Jenkins Email Notification — Freestyle Project (Overview)
+1️⃣ Install Email Extension Plugin
+
+Manage Jenkins → Manage Plugins → Available
+
+Install Email Extension Plugin
+
+Restart Jenkins
+
+2️⃣ Configure SMTP Server (Global Settings)
+
+Manage Jenkins → System
+
+Under Email Notification + Extended Email Notification:
+
+SMTP Server: smtp.gmail.com
+
+Port: 465
+
+SSL: ✔
+
+Username: Gmail ID
+
+Password: App Password (not normal password)
+
+If test mail works → SMTP is ready.
+
+3️⃣ Configure Email in Freestyle Project
+
+Open your job → Configure → scroll to Post-build Actions:
+
+Option A — Basic Jenkins Email
+
+Add E-mail Notification
+
+Add recipient → yourmail@example.com
+
+Jenkins sends email on failure by default.
+
+Option B — Advanced Email (Recommended)
+
+Add Editable Email Notification
+
+Set:
+
+Recipient List
+
+Default Subject
+
+Default Content
+
+Enable triggers:
+
+On Failure
+
+On Success
+
+On Unstable
+
+4️⃣ Run the Job
+
+When build runs:
+
+On failure → email sent
+
+On success (if enabled) → email sent
