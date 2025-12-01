@@ -1,0 +1,121 @@
+⭐ Step 1 — Open Maven Project Wizard
+
+Go to File → New → Project
+
+Search: Maven
+
+Select Maven Project
+
+Click Next
+
+⭐ Step 2 — Select Workspace Location
+
+Keep default → Next
+
+⭐ Step 3 — Select Web App Archetype
+
+In the archetype selection screen:
+
+Search for:
+
+maven-archetype-webapp
+
+
+Select:
+
+org.apache.maven.archetypes : maven-archetype-webapp
+
+
+Then click Next.
+
+⭐ Step 4 — Enter Web Project Details
+
+Fill:
+
+Field	Example
+Group Id	com.example
+Artifact Id	demo-web
+Version	auto
+Package	com.example.web
+
+Click Finish.
+
+📁 Your Web Project Structure
+
+Eclipse generates:
+
+demo-web
+ ├── src
+ │   └── main
+ │       └── webapp
+ │            ├── index.jsp
+ │            └── WEB-INF
+ │                 └── web.xml
+ ├── pom.xml
+ └── target
+
+
+This is a Dynamic Web Project (WAR).
+
+⭐ Step 5 — Add Java Folder (Important)
+
+Web archetype does NOT create src/main/java automatically.
+
+Do this:
+
+Right-click the project → New → Source Folder
+
+Name it:
+
+src/main/java
+
+⭐ Step 6 — Convert to Dynamic Web Project (If needed)
+
+Sometimes Eclipse does not treat Maven Web project as dynamic web project.
+
+Fix:
+
+Right-click project →
+Properties → Project Facets
+Enable:
+
+Dynamic Web Module
+
+Java 1.8 or above
+
+If it asks to modify web.xml → OK.
+
+⭐ Step 7 — Run on Server
+
+Right-click your project →
+Run As → Run on Server
+
+Choose:
+
+Apache Tomcat (recommended)
+
+📌 Basic pom.xml for Web Project
+
+Here is what Eclipse generates:
+
+<packaging>war</packaging>
+
+<build>
+    <plugins>
+        <plugin>
+            <artifactId>maven-war-plugin</artifactId>
+            <version>3.3.2</version>
+        </plugin>
+    </plugins>
+</build>
+
+⭐ Optional: Add Servlet Dependency
+
+If you create servlets, add:
+
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>javax.servlet-api</artifactId>
+    <version>4.0.1</version>
+    <scope>provided</scope>
+</dependency>
