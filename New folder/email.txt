@@ -1,4 +1,4 @@
-STEP 1 — Install Email Extension Plugin
+1STEP 1 — Install Email Extension Plugin
 
 Open Jenkins Dashboard
 
