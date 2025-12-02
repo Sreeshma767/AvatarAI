@@ -119,3 +119,9 @@ If you create servlets, add:
     <version>4.0.1</version>
     <scope>provided</scope>
 </dependency>
+
+<dependency>
+  <groupId>KMIT</groupId>
+  <artifactId>KMultiModule</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+</dependency>
